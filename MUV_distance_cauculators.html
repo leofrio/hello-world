@@ -1,0 +1,97 @@
+<script> 
+function skip() { 
+	document.write("<br>") 
+} 
+function show(text) {
+	document.write(text) 
+	skip()
+} 
+function cauculatedistance(so, v, t) { 
+	var d=so + v*t 
+	return d 
+} 
+function cauculatespeed(so, s, t) { 
+	var speed=(s-so)/t 
+	return speed 
+}  
+function cauculatetime(so, s, v) { 
+	var time=(s-so)/v
+	return time 
+} 
+function cauculateacce(vo, v ,t) { 
+	var acce=(v-vo)/t 
+	return acce 
+} 
+function cauculatedistancea(so, vo, t, a) { 
+	var da=so+ vo*t + ((a*t*t)/2) 
+	return da 
+} 
+function cauculatespeedv(vo, a , so , s) { 
+	var sv=Math.sqrt(vo*vo + (2*a*(s-so))) 
+	return sv 
+}
+alert("hello in this physics cauculator we could help you find the speed,time,or acceleration or distance of a certain trajectory using MUV formulas, just choose what you want to find and give the propper data")  
+alert("ps: if you want to find the distance  but wants to input an acceleration value,put distancea on the next question,also if you want to find the speed but does not want to give a value for the time put speedv")
+var want=prompt("what do you want to know?choose either speed,time,acceleration,distance,distancea,speedv")  
+if(want == "distance") { 
+	var idistance=parseFloat(prompt("what was the initial distance(So)?if you were still or at a defined beggining when you started put 0, all in Km"))
+	var speed=parseFloat(prompt("what was your regular speed during that trip?answer in Km/h"))
+	var time=parseFloat(prompt("how long did it take to do this journet?answer in hours")) 
+	var distancee=cauculatedistance(idistance,speed,time) 
+	show("your distance is:" + distancee + "Km") 
+}
+if(want == "speed") { 
+	var idistance=parseFloat(prompt("what was the initial distance(So)?if you were still or at a defined beggining when you started put 0, all in Km"))
+	var distance=parseFloat(prompt("what was the distance(also known as final distance) in Km that you walked/drove/flew during that this trip?")) 
+	var time=parseFloat(prompt("how long in hours did it take to make that trip?")) 
+	var speed=cauculatespeed(idistance, distance, time) 
+	show("your speed during this trip was:" + speed + "km/h") 
+} 
+if(want == "time") { 
+	var idistance=parseFloat(prompt("what was the initial distance(So)?if you were still or at a defined beggining when you started put 0, all in Km"))
+	var distance=parseFloat(prompt("what was the distance(also known as final distance) in Km you made during this trip?")) 
+	var speed=parseFloat(prompt("what was your regular speed during this trip?"))
+	var time=cauculatetime(idistance,distance, speed) 
+	var timeminu=time*60
+	show("the time you took to make this trip was:" + time + " hours or " +timeminu + "minutes") 
+} 
+if(want == "acceleration") { 
+	var ispeed=parseFloat(prompt("what was your intial speed(V0)? if you were stopped when you started put 0,all in km/h")) 
+	var speed=parseFloat(prompt("what was your regular speed during this trip?in Km/h")) 
+	var time= parseFloat(prompt("how long did it take you to do that trip? in hours")) 
+	var acce= cauculateacce(ispeed, speed, time) 
+	show("your acceleration druing this trip was:" + acce + "km/h^2" ) 
+} 
+if(want == "distancea") {
+	var idistance=parseFloat(prompt("what was the initial distance(So)?if you were still or at a defined beggining when you started put 0, all in Km")) 
+	var ispeed=parseFloat(prompt("what was your intial speed(V0)? if you were stopped when you started put 0,all in km/h")) 
+	var time= parseFloat(prompt("how long did it take you to do that trip? in hours"))
+	var acce=parseFloat(prompt("what was your accelation(km/h^2) during this trip?")) 
+	var da=cauculatedistancea(idistance, ispeed, time, acce) 
+	show("your distance given the data you've provided us with is:" + da + "km")
+} 
+if(want == "speedv") { 
+	var ispeed=parseFloat(prompt("what was your intial speed(V0)? if you were stopped when you started put 0,all in km/h")) 
+	var acce=parseFloat(prompt("what was your accelation(km/h^2) during this trip?"))  
+	var idistance=parseFloat(prompt("what was the initial distance(So)?if you were still when you started or at a defined beggining put 0, all in Km")) 
+	var distance=parseFloat(prompt("what was the distance(also known as final distance) in Km you made during this trip?")) 
+	var sv=cauculatespeedv(ispeed, acce, idistance, distance) 
+	show("based on the torichelly equation your speed equals:" + sv.toFixed(2) + "km/h") 
+} 
+if(want != "distance") {
+	if(want != "speed") { 
+		if(want != "time") { 
+			if(want != "acceleration") { 
+				if(want != "distancea") { 
+					if(want != "speedv") { 
+						show("<h1>ERROR!!</h1>")
+						show("<h2>USE ONLY THE OPTIONS SHOWN!</h2>")  
+						show("<h3>dont use captal letters, they dont work</h3>") 
+						show("<strong>if you want to put a decimal,put a point and not a comma for ex: 1.71 not 1,71</strong>")
+					}
+				}
+			}
+		}
+	}
+}
+</script>

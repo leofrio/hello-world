@@ -1,0 +1,63 @@
+<script> 
+function skip() { 
+	document.write("<br>") 
+} 
+function show(text) { 
+	document.write(text) 
+	skip() 
+}   
+
+		
+var want=prompt("which shape do you want?type only:square,retangle,stairs,v") 
+var g="*"
+if(want == "square") {
+	for(var n=1;n <= 20; n++) {
+		for(var c=1; c <= 50;c++) {  
+			document.write("*") 
+		}
+		skip()
+	} 
+} 
+if(want == "retangle") { 
+	for(n=1; n <= 20;n++ ) { 
+		for(c=1; c <= 75;c++) { 
+		document.write("*")  
+		}
+		skip() 
+	} 
+} 
+if(want == "stairs") { 
+	for(n=1; n <= 50;n++) { 
+		for(c=1;c <= n;c++) { 
+			document.write("*")
+		} 
+		skip() 
+	} 
+} 
+if(want == "v") { 
+    for(n=1;n <= 9;n++) {
+        for(c=1;c <= 18; c++) { 
+            if(n == c || n+c == 18) { 
+                document.write("*") 
+            } 
+            else { 
+                document.write("_")
+            }
+        }
+        skip() 
+    }
+}  
+if(want == "triangle") { 
+	for(n=1;n <= 9 ; n++) {
+		for(c=1;c <= 18;c++) { 
+			if(n+c >= 9 && n-c < 10 ) { 
+				document.write("*")
+			} 
+			else { 
+				document.write("_")
+			} 
+		} 
+	skip()
+	} 
+}
+</script>

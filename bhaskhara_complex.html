@@ -1,0 +1,42 @@
+<h1>bhaskhara calculator by leonardo gaspar</h1> 
+<strong>ps:it calculates complex numbers!!!!!</strong> 
+<br>
+<script> 
+function skip() { 
+	document.write("<br>"); 
+} 
+function show(text) {
+	document.write(text) 
+	skip()
+} 
+function caubhaskhara(r,a, b, c) { 
+	var delta=(b*b-4*a*c)  
+	if(delta >= 0) { 
+		if(r == 1) { 
+			bhaskhara= ((-b + Math.sqrt(delta))/(2*a)).toFixed(4) 
+		} 
+		else { 
+			bhaskhara= ((-b - Math.sqrt(delta))/(2*a)).toFixed(4) 
+		} 
+	} 
+	else { 
+		if(r == 1) { 
+			bhaskhara= -b/(2*a) + " + " + Math.sqrt(Math.abs(delta)) + "i" 
+		} 
+		else { 
+			bhaskhara= -b/(2*a) + " - " + Math.sqrt(Math.abs(delta)) + "i" 
+		} 
+	} 
+	return bhaskhara 
+} 
+var name=prompt("hello there what is your name?") 
+alert("hello," + name + ",we will solve a 2nd degree equation styled ax^2 + bx + c=0")
+var a=prompt("what is the value of a") 
+var b=prompt("what is the value of b") 
+var c=prompt("what is the value of c")
+var x1= caubhaskhara(1, a, b, c) 
+var x2= caubhaskhara(2,a, b, c) 
+show("well," +  name + " your equation is:" + a + "x^2 + " + b + "x + " + c); 
+show("x1 equals:" + x1); 
+show("x2 equals:" + x2);
+</script>

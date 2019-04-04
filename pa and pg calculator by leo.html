@@ -1,0 +1,201 @@
+<h3>PA AND PG CALCULATOR IN JAVASCRIPT BY LEONARDO PONTES GASPAR</h3> 
+<script> 
+function skip() {  
+	document.write("<br>") 
+}  
+function show(text) { 
+	document.write(text) 
+	skip() 
+} 
+function A(al) { 
+	alert(al) 
+}  
+function calculateanPA(a1, n , r) { 
+	var an=a1 + ((n-1) * r) 
+	return an 
+} 
+function calculatesnPA(a1,aL,n) { 
+	var sn= (((a1+aL)*n)/2) 
+	return sn  
+} 
+function calculateanPG(a1, n, q) { 
+	var an=a1 * (Math.pow(q,(n-1))) 
+	return an
+} 
+function calculateinfinitePG(a1, q) { 
+	var sni=(a1/(1-q)) 
+	return sni
+} 
+function calculatesnPG(a1, n, q) { 
+	var sn= (a1*(Math.pow(q,n) - 1))/(q-1) 
+	return sn
+}
+var  name=prompt("hello there what is your name?")   
+A( "hi there " + name + " today we will give a pa or a pg dependending on some values you give us") 
+var a1=parseFloat(prompt("first things first,what is the first term of your PA/PG?"))  
+var want=prompt("do you want to have a PA or PG calculated?choose any of the 2")   
+show("well," + name + " your " + want + " looks like this:")   
+document.write("(" + a1)
+if(want == "PA" || want == "pa") { 
+	var r=parseFloat(prompt("what is the reason/pace(r) of your  PA?")) 
+	var c=prompt("is your PA infinite?like it never ends?ANSWER ONLY WITH yes OR no,WITH NO CAPITALIZED LETTERS" ) 
+	if(c == "yes") {   
+		A("since your PA is infinite, we cannot tell the sums of the numbers, but we will show you the pa until the 30th number")
+		for(var n = 1 ; n <= 29 ; n++ ) { 
+			if(n == 29) { 
+				document.write(";" + (a1 + (n*r)) + ")") 
+			} 
+			else { 
+				document.write(";"  + (a1 +(n*r))) 
+			}
+		} 
+		var sumfound=prompt("but we can still find an specific term,would you like to know an especific term of your PA?(to find a3,a1000,a100),ANSWER ONLY WITH yes OR no,WITH NO CAPITALIZED LETTERS") 
+		if(sumfound == "yes") { 
+			var nu=parseInt(prompt(" thats great! " + name + ",what is the postion of the term you want to find?(ex: put 3 to find the third term or a3, or put 1000 to find the 1000th term or a1000, theres no limits!)"))
+			var an=calculateanPA(a1, nu, r) 
+			skip() 
+			show("the " + nu + "th term of your PA or the a" + nu + " of your PA equals: " + an) 
+		}  
+		else {
+			A("well thats okay!lets see your PA to the 50th term") 
+		} 
+	} 
+	if(c == "no") { 
+		A("thats great! your PA is finite so that means we will be able to calculate the sum of all your PA terms, and also the an term you want if its inside your PA ") 
+		var limit=parseFloat(prompt("how many terms does your PA have?(ex:a pa with 40 numbers has 40 terms, one with 3 numbers has 3 terms etc... )")) 
+		if(limit <= 50 ) { 
+			for(var n= 1; n <= (limit-1) ; n++){ 
+				if(n == (limit-1)) { 
+					document.write(";" + (a1 + (n*r)) + ")") 
+				} 
+				else { 
+					document.write(";" + (a1 + (n*r))) 
+				}
+			}  
+			var aL=calculateanPA(a1, limit, r) 
+			var sn=calculatesnPA(a1, aL, limit) 
+		} 
+		else { 
+			for(var n= 1; n <=  49 ; n++){ 
+				if(n == (49)) { 
+					document.write(";" + (a1 + (n*r)) + ")") 
+				} 
+				else { 
+					document.write(";" + (a1 + (n*r))) 
+				}
+			}     
+		}
+		var sumfound=prompt("would you like to know a specific term of your PA?ANSWER ONLY WITH yes OR no,WITH NO CAPITALIZED LETTERS") 
+		if(sumfound == "yes") { 
+			var nu=parseInt(prompt(" thats great! " + name + ",what is the postion of the term you want to find?(ex: put 3 to find the third term or a3, or put 1000 to find the 1000th term or a1000,but always less or equal to the amount of terms your PA has)"))
+			if(nu <= limit) {
+				var an=calculateanPA(a1, nu, r) 
+				skip() 
+				if(limit > 50) { 
+					show("since your PA had over 50 terms,we showed only 50 terms up here,but if you chose to do so you can see a specific term of your choice down here")
+				}
+				show("the " + nu + "th term of your PA or the a" + nu + " of your PA equals: " + an) 
+			} 
+			else { 
+				skip() 
+				if(limit > 50) { 
+					show("since your PA had over 50 terms,we showed only 50 terms up here,but if you chose to do so you can see a specific term of your choice down here")
+				}
+				show("we cannot find this term because its either more than the number of terms in your PA, or its a negative number, and we cant have a negatve position")
+			}
+		}   
+		else {
+			skip() 
+			if(limit > 50) { 
+				show("since your PA had over 50 terms,we showed only 50 terms up here,but if you chose to do so you can see a specific term of your choice down here")
+			}
+			A("well thats okay!lets see your pa then!") 
+		}			
+		var aL=calculateanPA(a1, limit, r) 
+		var sn=calculatesnPA(a1, aL, limit) 
+		show("the sum of all the " + limit + " terms of your pa equals: " + sn) 
+		show("also,the last term of your PA,or a" + limit + " equals: " + aL)
+		
+	}
+}
+if(want == "PG" || want == "pg") {  
+	var q=parseFloat(prompt("what is the reason/pace(q) of your  PG?")) 
+	var c=prompt("is your PG infinite?like it never ends?ANSWER ONLY WITH yes OR no,WITH NO CAPITALIZED LETTERS")  
+	if(c == "yes") {  
+		A("hey,since your PG is infinite, we will only show 25 terms,but you can see a specific term if you choose to,also if your reason(q) is between 0 and 1, we can cauculate the sum of the terms even though its infinite. ") 
+		for(var n = 1; n <= 24;  n++) { 
+			if(n == 24) { 
+				document.write(";" + (a1 * Math.pow(q,n)) + ")")
+			}
+			else  { 
+				document.write(";" + (a1 * Math.pow(q,n)))
+			}
+		}  
+		skip() 
+		show("remembering this pg is infinite,so up here are only first 25 terms of it")
+		var sumfound=prompt("but we can still find an specific term,would you like to know an especific term of your PG?(to find a3,a1000,a100),ANSWER ONLY WITH yes OR no,WITH NO CAPITALIZED LETTERS") 
+		if(sumfound == "yes") { 
+			var nu=parseInt(prompt(" thats great! " + name + ",what is the postion of the term you want to find?(ex: put 3 to find the third term or a3, or put 1000 to find the 1000th term or a1000, theres no limits!)"))
+			var an=calculateanPG(a1, nu, q) 
+			show("the "+ nu + "th number of your pg or a" + nu + " equals " + an) 
+		} 
+		if(sumfound == "no") { 
+			A("hey thats okay!lets check it out the first 30 terms of your pg!") 
+		} 
+		if(q > -1 && q < 1) { 
+			show("since your q is under 1 and over -1 we can cauculate the sum of all the terms of the your infinite pg") 
+			var sni=calculateinfinitePG(a1, q) 
+			show("the sum of the terms of your infinite pg equals: " + sni)
+		}
+	} 
+	if(c == "no") {  
+		A("thats great! your PG is finite,that means we can calculate the sum of all its terms indepedent of the q,we can also calculate any specific term you from this pg! isnt't it great?!")
+		var limit=parseInt(prompt("how many terms are in your pg?")) 
+		if(limit <= 35){ 
+			for(var n = 1;n <= (limit-1); n++){ 
+				if(n == (limit-1)) {
+					document.write(";" + (a1 * Math.pow(q,n)) + ")") 
+				} 
+				else { 
+					document.write(";" + (a1 * Math.pow(q,n)))
+				}
+			}
+		} 
+		else { 
+			for(var n= 1; n <= 34;n++ ) { 
+				if(n == 34) { 
+					document.write(";" + (a1 * Math.pow(q,n)) + ")")
+				}  
+				else { 
+					document.write(";" + (a1 * Math.pow(q,n)))
+				}
+			}
+			skip() 
+			show("since your pg had over 35 terms,we only showed the first 35 here, but if you choose to do so, you can find a specific term down below") 
+		}
+		var sumfound=prompt("would you like to know a specific term of your PG?ANSWER ONLY WITH yes OR no,WITH NO CAPITALIZED LETTERS") 
+		if(sumfound == "yes") { 
+			var nu=parseInt(prompt(" thats great! " + name + ",what is the postion of the term you want to find?(ex: put 3 to find the third term or a3, or put 1000 to find the 1000th term or a1000,as long as its less than or equal to the number of terms in your PG)"))
+			if(nu <= limit && nu > 0){	
+				var an=calculateanPG(a1, nu, q) 
+				show("the "+ nu + "th number of your pg or a" + nu + " equals: " + an) 
+ 			} 
+			else { 
+				show("we couldn't calculate the specific number you asked becausee you either puted a number thats over the number of terms you have on your PG, or you put a negative number, and you cant have a negative position")
+			}	
+		} 
+		if(sumfound == "no") { 
+			A("hey thats okay!lets check it out the first 30 terms of your pg!") 
+		} 
+		var aL=calculateanPG(a1, limit, q) 
+		var sn=calculatesnPG(a1, limit, q) 
+		show("the last term on your pg or a" + limit + " equals: " + aL) 
+		show("the sum of all the " + limit + " terms on your PG equals: " + sn)
+	} 
+		
+	show("remembering we are dealing with PGS here, so numbers tend to get really high,so if you see a number with an 'e+x'or 'e-x' at which 'x' is any number to the right of 'e' means 10^x which means the number next to 'e' is the amount of zeros after the last number before 'e' ")
+}   
+show("hope you enojoyed this PA/PG calculator i made!please be sure to use its fullest and whenever you need it") 
+show("calculator made in javascript by LEONARDO PONTES GASPAR") 
+show("copyright law: all rights belong to leonardo gaspar")
+</script>

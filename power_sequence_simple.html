@@ -1,0 +1,46 @@
+<big><strong>potential sequence</strong></big>
+<script> 
+function skip() { 
+	document.write("<br>") 
+} 
+function show(text) { 
+	document.write(text) 
+	skip() 
+}
+var first=parseFloat(prompt("lets make a sequence of some numbers, haha, what is the first term?")) 
+var pace=parseFloat(prompt(" HAHAHAHAHAHA  thats great!, now tell me the pace of your sequence please, we will make it crazy, but please keep it under 2 and higher than -2")) 
+if(pace <= 2 && pace >= -2) {
+	if(pace == 1 ) {
+		var limit=parseFloat(prompt("how many terms does your sequence has?? it cant be infite okay? HAHHAHAH it cant"))
+		skip()
+		show("well here is your power sequence of " + first + " to the " + limit + "th number") 
+		document.write("(" + first) 
+		for(var n =2 ; n <= limit; n++) {  
+			if(n == limit) {  
+				document.write(";" + Math.pow(first,(pace *n)) + ")" ) 
+			} 
+			else{
+			document.write(";" + Math.pow(first,(pace *n))) 
+			} 
+		} 
+	} 
+	else { 
+		var limit=parseFloat(prompt("how many terms does your sequence has?? it cant be infite okay? HAHHAHAH it cant"))
+		skip()
+		show("well here is your power sequence of " + first + " to the " + limit + "th number, which every power is multiplicated by " + pace) 
+		document.write("(" + Math.pow(first,(pace * 1))) 
+		for(var n =2 ; n <= limit; n++) {  
+			if(n == limit) {  
+				document.write(";" + Math.pow(first,(pace *n)) + ")" ) 
+			} 
+			else{
+			document.write(";" + Math.pow(first,(pace *n))) 
+			} 
+		} 
+	} 
+}	
+else{ 
+skip()
+show("that pace is just waaaay too damn high man, so guess what?? it didnt freaking work, ont fuck with the powers in math bro, reload and try it again")
+}
+</script>
