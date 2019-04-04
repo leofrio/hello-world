@@ -1,0 +1,18 @@
+ <script>  
+function skip() { 
+	document.write("<br>") 
+}
+function show(text) { 
+	document.write(text) 
+	skip()
+}  
+var volume;
+var arnaldo=parseFloat(prompt("what is the arnaldo")) 
+var width=parseFloat(prompt("what is the width")) 
+var area= width * arnaldo 
+for(var x=1 ; x >= 0 ; x= (area - (x*((-2*width) - (2 * arnaldo) + 4*x))) * x ) { 
+	volume=x * area 
+	alert(volume + " when x equals " + x) 
+} 
+
+</script>
