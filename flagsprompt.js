@@ -23,6 +23,28 @@ function drawcross(x,y) {
 	ct.lineTo(x-45,y+45) 
 	ct.lineTo(x,y+45)  
 	ct.fill()
+} 
+function drawlozangbrazil(x,y) { 
+	ct.beginPath() 
+	ct.moveTo(x,y) 
+	ct.lineTo(x+400,y+200) 
+	ct.lineTo(x,y+400) 
+	ct.lineTo(x-400,y+200) 
+	ct.fill()
+} 
+function drawstar(x,y) { 
+	ct.beginPath() 
+	ct.moveTo(x,y) 
+	ct.lineTo(x+20,y+20) 	
+	ct.lineTo(x+40,y+20) 
+	ct.lineTo(x+20,y+40) 
+	ct.lineTo(x+40,y+60) 
+	ct.lineTo(x+20,y+40) 
+	ct.lineTo(x,y+60) 
+	ct.lineTo(x+20,y+40) 
+	ct.lineTo(x,y+20) 
+	ct.lineTo(x+20,y+20) 
+	ct.fill()
 }
 A("hello this is program a flag of a country you want") 
 var want=prompt("what country do you want the flag of?flags avaliable:Germany,Belgium,Estonia,Italy,Austria,Bugaria,France,Hungary,Ireland,Latvia,Denmark,Czech Republic,Finland,Georgia,Greece") 
@@ -175,4 +197,24 @@ if(want == "greece" || want == "Greece") {
 	ct.fillRect(0,450,843.75,56.25) 
 	ct.strokeStyle="black" 
 	ct.strokeRect(0,0,843.75,506.25)
+} 
+if(want == "brazil" || want == "Brazil" || want == "br" || want == "brasil" || want == "Brasil" || want == "BRAZIL" || want == "fui roubado" || want == "que pais e esse" || want == "a porra do brasil" || want == "e a porra do Brasil" || want == "a porra do Brasil") { 
+	ct.fillStyle="green" 
+	ct.fillRect(0,0,1000,600) 
+	ct.fillStyle="yellow" 
+	drawlozangbrazil(500,100)
+	ct.fillStyle="darkblue" 
+	ct.beginPath()
+	ct.arc(500,300,130,0,1 * Math.PI,false) 
+	ct.fill() 
+	ct.fillStyle="darkblue" 
+	ct.beginPath()
+	ct.arc(500,280,130,0,1 * Math.PI,true) 
+	ct.fill() 
+	ct.fillStyle="white" 
+	ct.fillRect(369.4,280,261,20)  
+	ct.fillStyle="black"
+	ct.font = "24px Impact" 
+	ct.fillText("DESORDEM E ATRASO",400,300) 
+	ct.fillStyle="white" 
 }
