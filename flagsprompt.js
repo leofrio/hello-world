@@ -47,7 +47,7 @@ function drawstar(x,y) {
 	ct.fill()
 }
 A("hello this is program a flag of a country you want") 
-var want=prompt("what country do you want the flag of?flags avaliable:Germany,Belgium,Estonia,Italy,Austria,Bugaria,France,Hungary,Ireland,Latvia,Denmark,Czech Republic,Finland,Georgia,Greece") 
+var want=prompt("what country do you want the flag of?flags avaliable:Germany,Belgium,Estonia,Italy,Austria,Bugaria,France,Hungary,Ireland,Latvia,Denmark,Czech Republic,Finland,Georgia,Greece,Brazil") 
 var screen=document.getElementById("screen") 
 var ct= screen.getContext("2d")  
 if(want == "germany"|| want == "Germany") {
