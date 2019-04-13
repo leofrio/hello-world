@@ -25,7 +25,7 @@ function drawcross(x,y) {
 	ct.fill()
 }
 A("hello this is program a flag of a country you want") 
-var want=prompt("what country do you want the flag of?flags avaliable:Germany,Belgium,Estonia,Italy,Austria,Bugaria,France,Hungary,Ireland,Latvia,Denmark,Czech Republic,Finland,Georgia") 
+var want=prompt("what country do you want the flag of?flags avaliable:Germany,Belgium,Estonia,Italy,Austria,Bugaria,France,Hungary,Ireland,Latvia,Denmark,Czech Republic,Finland,Georgia,Greece") 
 var screen=document.getElementById("screen") 
 var ct= screen.getContext("2d")  
 if(want == "germany"|| want == "Germany") {
@@ -153,4 +153,26 @@ if(want == "georgia" || want == "Georgia") {
 	drawcross(592,350)
 	ct.strokeStyle="black" 
 	ct.strokeRect(0,0,800,530)
+} 
+if(want == "greece" || want == "Greece") { 
+	ct.fillStyle="steelblue" 
+	ct.fillRect(0,0,112.5,112.5) 
+	ct.fillStyle="steelblue" 
+	ct.fillRect(165,0,112.5,112.5) 
+	ct.fillStyle="steelblue"
+	ct.fillRect(0,168.75,112.5,112.5) 
+	ct.fillStyle="steelblue"
+	ct.fillRect(165,168.75,112.5,112.5) 
+	ct.fillStyle="steelblue"
+	ct.fillRect(277.5,0,566.5,56.25) 
+	ct.fillStyle="steelblue" 
+	ct.fillRect(277.5,112.5,566.5,56.25) 
+	ct.fillStyle="steelblue"
+	ct.fillRect(277.5,225,566.5,56.25) 
+	ct.fillStyle="steelblue"
+	ct.fillRect(0,337.5,843.75,56.25) 
+	ct.fillStyle="steelblue"
+	ct.fillRect(0,450,843.75,56.25) 
+	ct.strokeStyle="black" 
+	ct.strokeRect(0,0,843.75,506.25)
 }
