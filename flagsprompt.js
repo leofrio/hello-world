@@ -217,4 +217,31 @@ if(want == "brazil" || want == "Brazil" || want == "br" || want == "brasil" || w
 	ct.font = "24px Impact" 
 	ct.fillText("DESORDEM E ATRASO",400,300) 
 	ct.fillStyle="white" 
+}  
+if(want == "South Africa" || want == "south africa" || want == "south Africa" || want == "South africa" || want == "sa") { 
+	ct.fillStyle= "black" 
+	ct.beginPath() 
+	ct.moveTo(0,100) 
+	ct.lineTo(230,250) 
+	ct.lineTo(0,400) 
+	ct.fill() 
+	ct.fillStyle="goldenrod" 
+	ct.beginPath() 
+	ct.moveTo(0,100) 
+	ct.lineTo(0,60)  
+	ct.lineTo(280,250) 
+	ct.lineTo(0,430) 
+	ct.lineTo(0,400) 
+	ct.lineTo(230,250)   	
+	ct.fill()
+	ct.fillStyle="mediumseagreen" 
+	ct.beginPath() 
+	ct.moveTo(0,60) 
+	ct.lineTo(0,0)  
+	ct.lineTo(60,0)  
+	ct.lineTo(350,210) 
+	ct.lineTo(280,250) 
+	ct.fill()  
+	ct.strokeStyle="black" 
+	ct.strokeRect(0,0,1200,800)
 }
