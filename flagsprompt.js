@@ -239,9 +239,23 @@ if(want == "South Africa" || want == "south africa" || want == "south Africa" ||
 	ct.moveTo(0,60) 
 	ct.lineTo(0,0)  
 	ct.lineTo(60,0)  
-	ct.lineTo(350,210) 
+	ct.lineTo(370,230) 
 	ct.lineTo(280,250) 
-	ct.fill()  
+	ct.fill() 
+	ct.fillStyle="mediumseagreen" 
+	ct.beginPath() 
+	ct.moveTo(370,230) 
+	ct.lineTo(900,230) 
+	ct.lineTo(900,300) 
+	ct.lineTo(370,300) 
+	ct.fill()
+	ct.fillStyle="red" 
+	ct.beginPath() 
+	ct.moveTo(117,0) 
+	ct.lineTo(900,0) 
+	ct.lineTo(900,200) 
+	ct.lineTo(387,200) 
+	ct.fill()
 	ct.strokeStyle="black" 
-	ct.strokeRect(0,0,1200,800)
+	ct.strokeRect(0,0,900,800)
 }
