@@ -1,0 +1,31 @@
+<script>
+function skip() { 
+	document.write("<br>")
+} 
+function show(text) { 
+	document.write(text) 
+	skip()
+} 
+var angle=parseFloat(prompt("what is the angle"))  
+var terms=parseFloat(prompt("what is the number of terms"))
+var arnaldo;
+var h=1 
+var a=1 
+var s=1 
+var sen; 
+var ragnarock;
+for(var n =1; n <= terms;n++) { 
+	arnaldo= (Math.pow(angle,h)) 
+	for(var i =1 ;i <= a ; i++) { 
+		a=a*i
+	}
+	sen=arnaldo/a 
+	sen=sen * s
+	ragnarock=ragnarock+sen
+	a=h 
+	s=s * -1 
+	h=h+2 
+	a=a+2
+}  
+show("the sen of " + angle + " equals " + ragnarock)
+</script>
