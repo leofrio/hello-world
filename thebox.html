@@ -1,20 +1,14 @@
- <script>  
+<script>
 function skip() { 
 	document.write("<br>") 
 }
 function show(text) { 
 	document.write(text) 
 	skip()
-}  
-var truex = 0
-var volume;
-var lenght=parseFloat(prompt("what is the lenght?")) 
-var width=parseFloat(prompt("what is the width?")) 
-var area= width * lenght 
-for(var x=1 ; x >= 0 ; x= (area - (x*((-2*width) - (2 * lenght) + 4*x))) * x ) { 
-	volume=x * area 
-	alert(volume + " when x equals " + x) 
-	truex=truex + 1
-}  
-show("the value of x equals :" + truex)
+} 
+var L=parseFloat(prompt("qual a largura da caixa?")) 
+var c=parseFloat(prompt("qual a o comprimento da caixa?")) 
+var x=parseFloat(prompt("qual o valor de x?")) 
+var volume=x * (c - (2*x)) * (L-(2*x)) 
+show("o volume maximo para a caixa é igual a " + volume)   
 </script>
