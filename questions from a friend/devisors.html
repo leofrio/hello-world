@@ -1,0 +1,25 @@
+<script> 
+function skip() { 
+	document.write("<br>")
+}
+function show(text) { 
+	document.write(text) 
+	skip()
+} 
+var number=parseInt(prompt("type the number you want to know the devidents")) 
+var c=number
+var a =[]
+document.write("the devidents of  " + number + " are: ")
+for(var n=1; n <= c ; n++) { 
+	if(n < c) {
+		if(c/n == Math.round(c/n)) { 
+			document.write(n + ";") 
+		}  
+	}
+	if(n == c) { 
+		if(c/n == Math.round(c/n)) { 
+			document.write(n) 
+		}
+	}
+} 
+</script>

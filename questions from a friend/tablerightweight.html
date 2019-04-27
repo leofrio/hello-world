@@ -1,0 +1,40 @@
+<script> 
+//question 1   
+function skip() { 
+	document.write("<br>")
+} 
+function show(text) { 
+	document.write(text) 
+	skip()
+} 
+function rightimc(height,weight) { 
+	var imc= (weight/(height * height)).toFixed(2) 
+	return imc
+}   
+var a=[] 
+var i=0 
+var regulator; 
+var g=0 
+var biggestweight; 
+var imc;
+for(var h=1.60;h <= 1.90; h= h + 0.01) { 
+	for(var w=1;w <= 200 ; w++) { 
+		imc=rightimc(h,w) 
+		regulator=w
+		if(imc > 18.5 && imc < 25 ) { 
+			a[i]=regulator 
+			if(a[i] > g) { 
+				biggestweight=a[i]
+			} 
+			g=regulator
+			i++ 
+		}
+	} 
+	document.write("height:" + h + "m ideal weight::")    
+	a.sort()  
+	var smallestweight=a[0]    
+	document.write(smallestweight + "kg to " + biggestweight + "kg")  
+	skip()
+	a=[]
+} 
+</script> 

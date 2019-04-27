@@ -1,0 +1,23 @@
+<script> 
+function skip() { 
+	document.write("<br>")
+} 
+function show(text) {
+	document.write(text) 
+	skip()
+} 
+var n=parseFloat(prompt("what is the value of n? by that i mean until what position is the sequence going to be kept going for?")) 
+var summer=0
+var sequence; 
+var c=1  
+var signal=1 
+while(n >= 1) { 
+	sequence=c/n 
+	sequence=sequence *signal
+	summer=summer +sequence
+	c++
+	n-- 
+	signal=signal * -1
+} 
+show("the value of the sequence equals " + summer)
+</script>

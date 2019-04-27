@@ -1,0 +1,38 @@
+<script> 
+function skip() { 
+	document.write("<br>")
+} 
+function show(text) { 
+	document.write(text) 
+	skip()
+} 
+function A(al) { 
+	alert(al)
+} 
+show("<h4>hello this is a program that will recieve all the full numbers you input,tekk the average of all the even ones, and tell which one of your number is the smllest</h4>")
+var a = [] 
+var i = 0 
+var totalcount=0 
+sumnumber=0 
+for(var n=1; true; n++) { 
+	var number=parseInt(prompt("ola pessoa n " + n + " digite um numero")) 
+	if(number == 0) { 
+		break;
+	} 
+	a[i] = number 
+	if(number/2 == Math.round(number/2)) {  
+		totalcount=totalcount + 1
+		sumnumber=sumnumber + number
+	} 
+	i++
+} 
+var smallestnumber=a[0] 
+for(var i=0;i <= a.length; i++) { 
+	if(a[i] < smallestnumber) { 
+		smallestnumber=a[i]
+	}
+} 
+var media=(sumnumber/totalcount).toFixed(2) 
+show("smallest number of the numbers you input equals " + smallestnumber ) 
+show("the average of all the even numbers among the numbers you input equals: " + media)
+</script>

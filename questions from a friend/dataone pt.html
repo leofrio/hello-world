@@ -1,0 +1,54 @@
+<script> 
+function skip() { 
+	document.write("<br>")
+} 
+function show(text) { 
+	document.write(text) 
+	skip()
+} 
+var sumheightman=0  
+var sumweightwoman=0 
+var totalwoman=0 
+var totalman=0 
+var g=0 
+var y=0 
+var a=[] 
+var b=[] 
+var i=0  
+var h=0
+var biggestheightman; 
+var biggestweightwoman;
+for(var n = 1;n <= 250;n++) { 
+	var sexo=prompt("ola pessoa " + n + " qual o seu sexo? digite apenas homem ou mulher") 
+	if(sexo == "homem" || sexo == "Homem" || sexo == "m") { 
+		var height=parseFloat(prompt("pessoa " + n + " qual a sua altura?")) 
+		var weight=parseFloat(prompt("pessoa " + n + " qual a seu peso?")) 
+		a[i]=height 
+		if(a[i] > g) { 
+			biggestheightman=a[i]
+		} 
+		g=height
+		sumheightman=sumheightman + height 
+		totalman=totalman + 1
+		i++
+	} 
+	if(sexo == "mulher" || sexo == "Mulher" || sexo == "f") { 
+		var height=parseFloat(prompt("pessoa " + n + " qual a sua altura?")) 
+		var weight=parseFloat(prompt("pessoa " + n + " qual a seu peso?")) 
+		b[h]=weight 
+		if(b[h] > y) { 
+			biggestweightwoman=b[h]
+		} 
+		sumweightwoman=sumweightwoman + weight
+		totalwoman=totalwoman+1
+		y=weight
+		h++
+	}
+} 
+var mediamen=(sumheightman/totalman).toFixed(2) 
+var mediawoman=(sumweightwoman/totalwoman).toFixed(2) 
+show("a media das alturas dos homens e igual a :" + mediamen  ) 
+show("a media dos pesos das mulheres e igual a : " + mediawoman) 
+show("o valor da altura do homem mais alto e :" + biggestheightman) 
+show("o valor do peso da mulher mais gorda e :" + biggestweightwoman)
+</script>
