@@ -9,10 +9,12 @@ function show(text) {
 var al=[]
 var b=[]
 var c=[]
-var d=[]  
+var d=[] 
+var e=[]  
+var f=[]  
 var arnaldo=0 
-var ablaudo=0
 var nonfloatdecimal=0 
+var decimalsum=0 
 var numberarea; 
 var floatarea;
 var bit=prompt("please type a 32 bit number") 
@@ -22,26 +24,33 @@ b[0]=signnumber
 for(var i =1 ; i <= 8;i++) { 
 	var numberpart= bit.charAt(i) 
 	al[i]=numberpart
-	c[i-1]=parseFloatnumberpart 	
-} 
+	c[i-1]=parseFloat(numberpart) 	
+}  
 for(var i=9;i <= 31;i++) { 
 	var floatpart= bit.charAt(i) 
 	al[i]=floatpart 
-	d[i-9]=parseFloat(floatpart)
+	d[i-9]=floatpart
 }  
-if(b[0] == 0) { 
+if(b[0] == "0") { 
 	b[0]="+"
 } 
-if(b[0] == 1) { 
+if(b[0] == "1") {
 	b[0]="-"
 }
 for(var i=7 ; i >= 0 ;i--) {
 	numberarea=((Math.pow(2,i) ) * c[arnaldo])
 	nonfloatdecimal=nonfloatdecimal + numberarea 
 	arnaldo++
+}  
+nonfloatdecimal=nonfloatdecimal-127
+for(var i=0; i <= 22 ; i++) { 
+	if(d[i] == "1") { 
+		decimalsum = decimalsum + Math.pow(2,(i+1) * -1)
+	} 
+}  
+decimalsum =decimalsum * Math.pow(2, nonfloatdecimal) 
+if(b[0] == "-") { 
+	decimalsum *= -1
 } 
-for(; i == Math.round(i) ; i--) { 
-	floatarea=(())
-} 
-//this code is not yet functioning because leo still needs to remember the concepts of floating binary numbers :(
+show(decimalsum)
 </script>
