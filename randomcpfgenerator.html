@@ -1,0 +1,22 @@
+<h1>Random CPF Generator</h1>
+<script> 
+function skip() { 
+	document.write("<br>")
+} 
+function show(text) { 
+	document.write(text) 
+	skip()
+} 
+var a=[] 
+document.write("your new cpf is:") 
+for(var i=0;i < 14; i++) { 
+	a[i]=Math.round(Math.random() * 9)  
+	if(i == 3 || i == 7) { 
+		a[i]= "."
+	} 
+	if(i == 11) { 
+		a[i]="-"
+	} 
+	document.write(a[i])
+}
+</script>
