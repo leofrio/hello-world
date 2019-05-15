@@ -1,0 +1,49 @@
+<script> 
+function skip() { 
+	document.write("<br>")
+} 
+function show(text) { 
+	document.write(text) 
+	skip()
+}   
+var a=[]
+var h=7
+var numerob=prompt("digite um numero binario em complemento de 2 de 8 bits") 
+var decimal=0 
+var bluidoide;
+for(var i =0; i < numerob.length;i++) { 
+	var alernaldo=numerob.charAt(i)  
+	if(alernaldo == "0") { 
+		a[i]="1"
+	}   
+	if(alernaldo == "1") { 
+		a[i]= "0" 
+	}
+} 
+if(a[7] == "0") {
+	a[7]=1  
+} 
+if(a[7] =="1") { 
+	a[7]="0"
+	for(var k=1 ; k <=7 ;k++) { 
+		if(a[h-k] == "1") { 
+			a[h-k]="0" 
+		} 
+		else { 
+			a[h-k]="1" 
+			break;
+		}
+	} 
+} 
+for(var i=0;i <= 7;i++){ 
+	var unircio=parseFloat(a[i]) 
+	unircio=unircio * Math.pow(2,h) 
+	decimal=decimal + unircio
+	h--
+} 
+bluidoide=numerob.charAt(0)
+if(bluidoide == "1") { 
+	decimal=decimal * -1
+} 
+document.write(" Numero em decimal e " + decimal) 
+</script>
