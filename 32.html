@@ -10,8 +10,6 @@ var al=[]
 var b=[]
 var c=[]
 var d=[] 
-var e=[]  
-var f=[]  
 var arnaldo=0 
 var nonfloatdecimal=0 
 var decimalsum=0 
@@ -21,20 +19,22 @@ var bit=prompt("please type a 32 bit number")
 var signnumber=bit.charAt(0) 
 al[0]=signnumber 
 b[0]=signnumber 
+
 for(var i =1 ; i <= 8;i++) { 
 	var numberpart= bit.charAt(i) 
 	al[i]=numberpart
-	c[i-1]=parseFloat(numberpart) 	
+	c[i-1]=parseFloat(numberpart)
+ 	
 }  
 for(var i=9;i <= 31;i++) { 
 	var floatpart= bit.charAt(i) 
 	al[i]=floatpart 
 	d[i-9]=floatpart
 }  
-if(b[0] == "0") { 
+if(signnumber == "0") { 
 	b[0]="+"
 } 
-if(b[0] == "1") {
+if(signnumber == "1") {
 	b[0]="-"
 }
 for(var i=7 ; i >= 0 ;i--) {
@@ -43,12 +43,13 @@ for(var i=7 ; i >= 0 ;i--) {
 	arnaldo++
 }  
 nonfloatdecimal=nonfloatdecimal-127
+console.log(nonfloatdecimal)
 for(var i=0; i <= 22 ; i++) { 
 	if(d[i] == "1") { 
 		decimalsum = decimalsum + Math.pow(2,(i+1) * -1)
 	} 
 }  
-decimalsum =decimalsum * Math.pow(2, nonfloatdecimal) 
+decimalsum =(1+decimalsum) * Math.pow(2, nonfloatdecimal) 
 if(b[0] == "-") { 
 	decimalsum *= -1
 } 
