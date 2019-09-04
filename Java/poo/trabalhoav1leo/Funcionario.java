@@ -1,4 +1,6 @@
 
+package well;
+
 public class Funcionario {
 	private String nome; 
 	private String cpf;
@@ -42,6 +44,12 @@ public class Funcionario {
 	}
 	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
-	} 
+	}  
+	
+	@Override
+	public String toString() {
+		return "Funcionario nome:" + nome + ", cpf:" + cpf + ", email:" + email + ", nascimento:" + nascimento
+				+ ", cargo:" + cargo.getNome() + ", id:" + id;
+	}
 	
 }
