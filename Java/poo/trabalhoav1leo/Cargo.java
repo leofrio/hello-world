@@ -1,4 +1,6 @@
 
+package well;
+
 public class Cargo {
 	private String nome; 
 	private double salario; 
@@ -23,6 +25,6 @@ public class Cargo {
 		this.id = id;
 	}
 	public void status() { 
-		System.out.print("nome do cargo:" + this.nome + " salario: " + this.salario + " id: " + this.id);
+		System.out.print("nome do cargo: " + this.nome + " salario: " + this.salario + " id: " + this.id);
 	}
 }
