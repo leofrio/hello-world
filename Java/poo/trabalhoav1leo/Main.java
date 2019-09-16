@@ -11,7 +11,10 @@ public class Main {
 		int u=0; 
 		int h=0; 
 		int z=0;
-		int sumtotal=0;
+		int p=0;
+		double sumtotal=0; 
+		Funcionario test;
+		
 		for(int i=0;true;i++) { 
 			System.out.println("escolha uma das opcoes abaixo"); 
 			System.out.println("1-Cadastrar novos cargos ");
@@ -24,8 +27,8 @@ public class Main {
 			System.out.println("8-Editar functionario(alterar nome,cpf,email,data de nacimento ou cargo)");
 			System.out.println("9-Criar setor");
 			System.out.println("10-Excluir setor");
-			System.out.println("11-Listar setores");
-			System.out.println("12-Adicionar funcionario a setor");
+			System.out.println("11-Adicionar funcionario a setor"); 
+			System.out.println("12-Listar setores");
 			System.out.println("13-Total de uma folha salarial de um setor");
 			System.out.println("14-Total da folha salarial da empresa"); 
 			System.out.println("15-Sair"); 
@@ -51,9 +54,11 @@ public class Main {
 				System.out.println("digite o nome do cargo que voce quer excluir"); 
 				String cargoex=let.next();
 				Cargo t=new Cargo(); 
-				for(int j=0;j < u;j++) { 
-					if(cargoex.equals(c[j].getNome())) { 
-						c[j]=null; 
+				for(int j=0;j < u;j++) {  
+					if(c[j] != null) {
+						if(cargoex.equals(c[j].getNome())) { 
+							c[j]=null; 
+						}
 					}
 				}
 			}
@@ -100,6 +105,7 @@ public class Main {
 					if(c[j] != null) { 
 						if(c[j].getNome().equals(cargoname)) { 
 							t.setCargo(c[j]); 
+							sumtotal += t.getCargo().getSalario();
 							counter++;
 						}
 					} 
@@ -115,8 +121,32 @@ public class Main {
 				System.out.println("digite o nome do funcionario que deseja demitir");
 				String fname=let.next();
 				for(int j=0;j < h;j++) { 
-					if(f[j].getNome().equals(fname)) { 
-						f[j]=null;
+					if(f[j] != null) {
+						if(f[j].getNome().equals(fname)) { 
+							sumtotal -= f[j].getCargo().getSalario();  
+							if(f[j].getSetorname().equals(null)) { 
+							
+							} 
+							else {
+								
+								for(int y=0;y < z;y++) { 
+									if(s[y] != null) { 
+										
+										for(int d=0;d < p;d++) {
+											if(s[y].func[p] != null) {
+												if(s[y].func[d].getNome().equals(fname)) { 
+													s[y].setSumsetor(s[y].getSumsetor() - f[j].getCargo().getSalario());  
+													test=s[y].func[p];
+													s[y].func[p].setNome(null);
+													s[y].func[p]=null; 
+												}
+											}
+										}
+									}
+								}
+							} 
+							f[j]=null; 
+						} 
 					}
 				}
 			} 
@@ -176,9 +206,67 @@ public class Main {
 			if(choice == 9) { 
 				Setor t=new Setor();
 				System.out.println("digite o nome do setor que deseja criar "); 
-				t.setNome(let.next());
+				t.setNome(let.next());  
 				s[z]=t; 
 				z++;
+			} 
+			if(choice == 10) { 
+				System.out.println("qual o nome do setor que voce deseja excluir"); 
+				String sname=let.next();
+				for(int j=0; j < z;j++) {
+					if(s[j].getNome().equals(sname)) { 
+						s[j]=null;
+					}
+				} 
+			} 
+			if(choice == 11) { 
+				System.out.println("qual o nome do funcionario que voce deseja adicionar a um setor?");
+				String fname=let.next(); 
+				for(int j=0;j < h;j++) {
+					if(f[j] != null) {
+						if(f[j].getNome().equals(fname)) {
+							System.out.println("qual o nome do setor que voce deseja adicionar o funcionario " + fname);
+							String sname=let.next(); 
+							for(int y=0;y < z;y++) { 
+								if(s[y].getNome().equals(sname)) {  
+									f[j].setSetorname(sname);;
+									s[y].func[p]=f[j];
+									s[y].setSumsetor(s[y].getSumsetor() + f[j].getCargo().getSalario());
+									p++;
+								}
+							}
+						}
+					}
+				}
+			} 
+			if(choice == 12) { 
+				for(int j=0;j < z;j++) {
+					if(s[j] != null) {
+						System.out.println("setor: " + s[j].getNome()); 
+						for(int y=0;y< p;y++) { 
+							if(s[j].func[y].getNome().equals(null)) {
+								System.out.println(s[j].func[y]);
+							}
+							else {
+								System.out.println(s[j].func[y]);
+							}
+						}
+					}
+				}
+			}
+			if(choice == 13) { 
+				System.out.println("escolha um setor para ver a folha salarial");
+				String sname=let.next();
+				for(int j=0;j < z;j++) {
+					if(s[j] != null) { 
+						if(s[j].getNome().equals(sname)) {
+							System.out.println(" a folha salarial do setor " + sname + " e igual a " + s[j].getSumsetor() + "R$");
+						}
+					}
+				}
+			} 
+			if(choice == 14) { 
+				System.out.println("a folha salarial da empresa e igual a " + sumtotal + "R$");
 			}
 			if(choice == 15) { 
 				
