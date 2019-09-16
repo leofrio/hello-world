@@ -133,11 +133,10 @@ public class Main {
 									if(s[y] != null) { 
 										
 										for(int d=0;d < p;d++) {
-											if(s[y].func[p] != null) {
+											if(s[y].func[d] != null) {
 												if(s[y].func[d].getNome().equals(fname)) { 
 													s[y].setSumsetor(s[y].getSumsetor() - f[j].getCargo().getSalario());  
 													test=s[y].func[p];
-													s[y].func[p].setNome(null);
 													s[y].func[p]=null; 
 												}
 											}
@@ -244,8 +243,7 @@ public class Main {
 					if(s[j] != null) {
 						System.out.println("setor: " + s[j].getNome()); 
 						for(int y=0;y< p;y++) { 
-							if(s[j].func[y].getNome().equals(null)) {
-								System.out.println(s[j].func[y]);
+							if(s[j].func[y] == null) {
 							}
 							else {
 								System.out.println(s[j].func[y]);
