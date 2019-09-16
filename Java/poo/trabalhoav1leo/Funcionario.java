@@ -7,8 +7,16 @@ public class Funcionario {
 	private String email; 
 	private String nascimento; 
 	private Cargo cargo;
-	private String  id;
+	private String  id; 
+	private String setorname; 
 	
+	
+	public String getSetorname() {
+		return setorname;
+	}
+	public void setSetorname(String setorname) {
+		this.setorname = setorname;
+	}
 	public String getId() {
 		return id;
 	}
@@ -53,3 +61,4 @@ public class Funcionario {
 	}
 	
 }
+
