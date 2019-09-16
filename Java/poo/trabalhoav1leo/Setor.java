@@ -3,9 +3,17 @@ package well;
 public class Setor {
 	private String nome;
 	private int qtdfunc; 
-	private Funcionario[] func;
+	public Funcionario[] func=new Funcionario[100];
+	private double sumsetor=0;
 	
 	
+	
+	public double getSumsetor() {
+		return sumsetor;
+	}
+	public void setSumsetor(double sumsetor) {
+		this.sumsetor = sumsetor;
+	}
 	
 	public String getNome() {
 		return nome;
@@ -18,12 +26,6 @@ public class Setor {
 	}
 	public void setQtdfunc(int qtdfunc) {
 		this.qtdfunc = qtdfunc;
-	}
-	public Funcionario[] getFunc() {
-		return func;
-	}
-	public void setFunc(Funcionario[] func) {
-		this.func = func;
 	} 
 	
 	
